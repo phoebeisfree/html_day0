@@ -1,12 +1,205 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="매일 성장하는 Jimin의 소개 페이지" />
+  <title>매일 성장하는 Jimin</title>
+
+  <!-- 단일 파일 배포를 위해 CSS를 내부에 포함했어요. 필요하면 style.css로 분리 가능합니다. -->
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --panel: #121418;
+      --text: #e6e7eb;
+      --muted: #9aa3af;
+      --accent: #7c9cff;
+      --ring: rgba(124, 156, 255, .35);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Helvetica, Arial, "Apple SD Gothic Neo", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: radial-gradient(1200px 600px at 10% -20%, #1a1f2f 0%, transparent 60%),
+                  radial-gradient(1000px 500px at 100% 0%, #17202b 0%, transparent 55%),
+                  var(--bg);
+    }
+    .container {
+      max-width: 920px;
+      padding: 32px 20px 64px;
+      margin: 0 auto;
+    }
+    header {
+      background: color-mix(in oklab, var(--panel) 92%, black 8%);
+      border: 1px solid #22262e;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.35), 0 0 0 1px rgba(255,255,255,.02) inset;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 3vw, 36px);
+      letter-spacing: -0.02em;
+    }
+    .lead {
+      margin: 0 0 6px;
+      font-size: clamp(14px, 1.5vw, 16px);
+      color: var(--muted);
+    }
+    .chip {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(124,156,255,.1);
+      border: 1px solid rgba(124,156,255,.25);
+      color: #cddbff;
+      font-weight: 600;
+      font-size: 12px;
+    }
+    main { margin-top: 28px; display: grid; gap: 20px; }
+    section {
+      background: color-mix(in oklab, var(--panel) 94%, black 6%);
+      border: 1px solid #22262e;
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 8px 28px rgba(0,0,0,.25);
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: clamp(18px, 2.2vw, 24px);
+    }
+    strong { color: #ffffff; }
+
+    /* 테이블 */
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 520px;
+    }
+    caption { text-align: left; margin-bottom: 10px; color: var(--muted); font-size: 14px; }
+    th, td { padding: 12px 14px; text-align: left; vertical-align: top; }
+    th { background: #1e2430; color: #dbe3ff; }
+    tr { border-bottom: 1px solid #22262e; }
+    td { word-break: break-word; }
+
+    /* 리스트 */
+    ol { padding-left: 20px; }
+    ol li { margin: 6px 0; }
+
+    /* 인용문 */
+    blockquote {
+      margin: 8px 0 0;
+      padding: 10px 14px;
+      border-left: 3px solid var(--accent);
+      background: rgba(124,156,255,.06);
+      border-radius: 8px;
+      color: #dfe7ff;
+    }
+
+    /* 폼 */
+    form { display: grid; gap: 12px; max-width: 520px; }
+    label { font-weight: 600; }
+    input[type="email"] {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid #2a2f3a;
+      background: #0f1218;
+      color: var(--text);
+      outline: none;
+    }
+    input[type="email"]:focus { border-color: var(--accent); box-shadow: 0 0 0 4px var(--ring); }
+    button[type="submit"] {
+      padding: 12px 16px;
+      border: 1px solid #2a2f3a;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #1c2333, #191f2a);
+      color: #e9edff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover { filter: brightness(1.07); }
+    footer { color: var(--muted); font-size: 13px; text-align: center; padding: 24px 0; }
+  </style>
 </head>
 <body>
-    과제 끝!!!
-    추가 해보자..
+  <div class="container">
+    <header>
+      <h1>매일 끊임없이 성장하는 Jimin</h1>
+      <p class="lead">자라나는 속도가 느리더라도, 꾸준히 나아가고자 노력하는 사람입니다.</p>
+      <p class="lead"><strong>앞으로도 기대 많이 해주세요!</strong></p>
+      <span class="chip">#Consistency #Growth</span>
+    </header>
+
+    <main>
+      <section aria-labelledby="intro">
+        <h2 id="intro">간단한 자기소개</h2>
+        <div class="table-wrap">
+          <table>
+            <caption>Jimin에 대해 자주 받는 질문</caption>
+            <thead>
+              <tr>
+                <th scope="col">질문</th>
+                <th scope="col">답변</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>올해 목표</td>
+                <td>건강의 독립을 해보자!</td>
+              </tr>
+              <tr>
+                <td>가장 좋아하는 성경 말씀</td>
+                <td>
+                  디모데후서 1장 6절
+                  <blockquote>“그러므로 내가 나의 안수함으로 네 속에 있는 하나님의 은사를 다시 불일듯 하게 하기 위하여 너로 생각하게 하노니.”</blockquote>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="foods">
+        <h2 id="foods">좋아하는 음식 TOP 5</h2>
+        <ol>
+          <li>계란찜</li>
+          <li>복숭아</li>
+          <li>양념게장</li>
+          <li>고추바사삭 치킨</li>
+          <li>떡볶이</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="artist">
+        <h2 id="artist">좋아하는 가수 — 소각소각</h2>
+        <p>소각소각은 제가 가장 좋아하는 가수입니다. 그들의 음악은 제 마음을 따뜻하게 해줍니다.</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">궁금한 점이 있다면 메일을 남겨주세요</h2>
+        <form action="#" method="post" aria-label="문의 폼" onsubmit="event.preventDefault(); alert('보내주셔서 감사합니다!'); this.reset();">
+          <label for="email">이메일 주소</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required />
+          <button type="submit">전송</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Jimin. 모든 권리 보유.
+    </footer>
+  </div>
+
+  <script>
+    // 푸터 연도 자동 갱신
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
